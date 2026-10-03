@@ -2,7 +2,7 @@ name = "dentaly-worker"
 main = "src/index.js"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
-account_id = "3e8dbc663289ae5f2f0d445c4b4d3373"
+account_id = "aad3951dff9cc14cbb8a465eb713e668"
 
 [[d1_databases]]
 binding = "DB"
@@ -38,7 +38,7 @@ crons = [
 
 [vars]
 ENVIRONMENT = "development"
-APP_URL = "https://dentaly.pages.dev"
+APP_URL = "https://dentistry-main.rahymstar13.workers.dev"
 
 # Secrets (set via wrangler secret put, NOT here):
 # JWT_SECRET
