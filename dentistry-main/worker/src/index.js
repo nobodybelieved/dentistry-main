@@ -36,6 +36,7 @@ import {
 
 const ALLOWED_ORIGINS = [
   'https://dentistry-main.rahymstar13.workers.dev',
+  'dentistry-main.rahymstar13.workers.dev'
   'http://localhost:3000',
   'http://localhost:8787',
   'http://127.0.0.1:5500',
