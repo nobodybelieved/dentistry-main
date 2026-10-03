@@ -65,22 +65,14 @@ export async function downloadPatientFile(req, env, _ctx, { id, fileId }) {
   const p = await env.DB.prepare(
     'SELECT id FROM patients WHERE id = ? AND clinic_id = ?'
   ).bind(id, req.user.clinic_id).first();
+
   if (!p) return error('Patient not found', 404);
 
   const meta = await env.DB.prepare(
     'SELECT r2_key, name, ext FROM files WHERE id = ? AND patient_id = ?'
   ).bind(fileId, id).first();
+
   if (!meta) return error('File not found', 404);
 
-  const obj = await env.FILES.get(meta.r2_key);
-  if (!obj) return error('File not in storage yet', 404);
-
-  const ct = obj.httpMetadata?.contentType || 'application/octet-stream';
-  const fn = encodeURIComponent(`${meta.name}.${meta.ext}`);
-  return new Response(obj.body, {
-    headers: {
-      'Content-Type': ct,
-      'Content-Disposition': `attachment; filename*=UTF-8''${fn}`,
-    },
-  });
+  return error('File storage is temporarily unavailable', 503);
 }
