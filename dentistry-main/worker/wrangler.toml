@@ -15,7 +15,7 @@ bucket_name = "dentaly-files"
 
 [[kv_namespaces]]
 binding = "AUTH_CACHE"
-id = "aad3951dff9cc14cbb8a465eb713e668"
+id = "33a1e6987c3a4ff2b26be53df3bfe0a1"
 
 [[durable_objects.bindings]]
 name = "CLINIC_ROOM"
