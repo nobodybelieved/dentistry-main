@@ -7,11 +7,7 @@ account_id = "aad3951dff9cc14cbb8a465eb713e668"
 [[d1_databases]]
 binding = "DB"
 database_name = "dentaly-db"
-database_id = "fcb13e3d-aa10-4a76-9c69-c0f626cc2d6d"
-
-[[r2_buckets]]
-binding = "FILES"
-bucket_name = "dentaly-files"
+database_id = "ca3b3e25-6937-4712-bc2c-e0cd3a120d86"
 
 [[kv_namespaces]]
 binding = "AUTH_CACHE"
