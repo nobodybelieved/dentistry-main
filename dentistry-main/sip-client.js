@@ -82,7 +82,7 @@
 
   async function fetchCreds() {
     const token = localStorage.getItem('dentaly_token');
-    const apiBase = (window.PLLATO_CONFIG && window.PLLATO_CONFIG.API_URL) || 'https://dentaly-worker.yernaryedil.workers.dev';
+    const apiBase = (window.PLLATO_CONFIG && window.PLLATO_CONFIG.API_URL) || 'https://dentaly-worker.rahymstar13.workers.dev';
     const resp = await fetch(apiBase + '/api/crm/sip/token', {
       headers: { 'Authorization': 'Bearer ' + token },
     });
@@ -523,7 +523,7 @@
   async function logCallEnded(meta) {
     try {
       const token = localStorage.getItem('dentaly_token');
-      const apiBase = (window.PLLATO_CONFIG && window.PLLATO_CONFIG.API_URL) || 'https://dentaly-worker.yernaryedil.workers.dev';
+      const apiBase = (window.PLLATO_CONFIG && window.PLLATO_CONFIG.API_URL) || 'https://dentaly-worker.rahymstar13.workers.dev';
       const durationSec = Math.round((Date.now() - meta.startedAt) / 1000);
       await fetch(apiBase + '/api/crm/sip/log', {
         method: 'POST',
