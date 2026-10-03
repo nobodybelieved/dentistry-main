@@ -1,0 +1,25 @@
+# Cloudflare / Wrangler
+.wrangler/
+.dev.vars
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local DB dumps / backups
+*.sqlite
+*.sqlite3
+backups/

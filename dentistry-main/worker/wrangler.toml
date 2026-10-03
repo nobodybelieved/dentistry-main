@@ -1,0 +1,52 @@
+name = "dentaly-worker"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+account_id = "3e8dbc663289ae5f2f0d445c4b4d3373"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "dentaly-db"
+database_id = "fcb13e3d-aa10-4a76-9c69-c0f626cc2d6d"
+
+[[r2_buckets]]
+binding = "FILES"
+bucket_name = "dentaly-files"
+
+[[kv_namespaces]]
+binding = "AUTH_CACHE"
+id = "1e354e597769477899a6b9236908e8a6"
+
+[[durable_objects.bindings]]
+name = "CLINIC_ROOM"
+class_name = "ClinicRoom"
+
+[[durable_objects.bindings]]
+name = "USER_NOTIFY_ROOM"
+class_name = "UserNotifyRoom"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["ClinicRoom", "UserNotifyRoom"]
+
+[triggers]
+crons = [
+  "*/15 * * * *",   # напоминания о записях (за 24ч и за 2ч)
+  "0 4 * * *",      # сегменты пациентов + проверка склада (09:00 Алматы)
+  "0 4 * * 1"       # реактивация спящих (пн 09:00 Алматы)
+]
+
+[vars]
+ENVIRONMENT = "development"
+APP_URL = "https://dentaly.pages.dev"
+
+# Secrets (set via wrangler secret put, NOT here):
+# JWT_SECRET
+# WHATSAPP_TOKEN
+# WHATSAPP_PHONE_ID
+# TELEGRAM_BOT_TOKEN
+# MOBIZON_API_KEY
+# KASPI_MERCHANT_ID
+# KASPI_SECRET
+# OPENAI_API_KEY
+# DOCXTOPDF_URL
