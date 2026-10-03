@@ -35,9 +35,7 @@ import {
 // ─── CORS ─────────────────────────────────────────────────────────────────────
 
 const ALLOWED_ORIGINS = [
-  'https://dentaly.pages.dev',
-  'https://597805c1.dentaly.pages.dev',
-  'https://smile-studio.kz',
+  'https://dentistry-main.rahymstar13.workers.dev',
   'http://localhost:3000',
   'http://localhost:8787',
   'http://127.0.0.1:5500',
